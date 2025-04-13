@@ -1,10 +1,12 @@
 const express = require("express");
+const connectDB = require("./config/db");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { chats } = require("./data/data");
 
-const app = express();
 dotenv.config();
+connectDB();
+const app = express();
 
 //allow cors for all origins
 app.use(cors());
